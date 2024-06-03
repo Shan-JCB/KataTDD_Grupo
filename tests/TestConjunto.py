@@ -10,26 +10,21 @@ class TestConjunto(unittest.TestCase):
         resultado = conjunto.promedio_ponderado()
         self.assertIsNone(resultado)
 
-    def test_conjunto_un_elemento(self):
-        datos = [10]
-        pesos = [1]
+class TestConjunto(unittest.TestCase):
+    def test_promedio_ponderado_0(self):
+        datos = [10, 12, 14]
+        pesos = [3, 4, 2]
         conjunto = Conjunto(datos, pesos)
         resultado = conjunto.promedio_ponderado()
-        self.assertEqual(resultado, 10)
+        self.assertAlmostEqual(resultado, 11.78, places=2)
 
-    def test_conjunto_dos_elementos(self):
-        datos = [10, 20]
-        pesos = [1, 1]
+    def test_promedio_ponderado_1(self):
+        datos = [15, 15, 17]
+        pesos = [3, 4, 2]
         conjunto = Conjunto(datos, pesos)
         resultado = conjunto.promedio_ponderado()
-        self.assertEqual(resultado, 15)
+        self.assertAlmostEqual(resultado, 15.44, places=2)
 
-    def test_conjunto_n_elementos(self):
-        datos = [1, 2, 3, 4, 5, 6, 7, 8]
-        pesos = [1, 1, 1, 1, 1, 1, 1, 1]
-        conjunto = Conjunto(datos, pesos)
-        resultado = conjunto.promedio_ponderado()
-        self.assertAlmostEqual(resultado, 4.5, places=2)
 
 
 
