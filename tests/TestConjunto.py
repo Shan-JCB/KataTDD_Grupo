@@ -17,6 +17,13 @@ class TestConjunto(unittest.TestCase):
         resultado = conjunto.promedio_ponderado()
         self.assertEqual(resultado, 10)
 
+    def test_conjunto_dos_elementos(self):
+        datos = [10, 20]
+        pesos = [1, 1]
+        conjunto = Conjunto(datos, pesos)
+        resultado = conjunto.promedio_ponderado()
+        self.assertEqual(resultado, 15)
+
 
 if __name__ == '__main__':
     unittest.main()
