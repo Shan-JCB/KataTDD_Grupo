@@ -7,12 +7,6 @@ class Conjunto:
         if not self.__datos or not self.__pesos or len(self.__datos) != len(self.__pesos):
             return None
 
-        if len(self.__datos) == 1:  # Caso de un solo elemento
-            return self.__datos[0]
-
-        elif len(self.__datos) == 2:  # Caso de dos elementos
-            return sum(self.__datos) / 2
-
         suma_ponderada = sum(d * p for d, p in zip(self.__datos, self.__pesos))
         suma_pesos = sum(self.__pesos)
         return suma_ponderada / suma_pesos
